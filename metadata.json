@@ -1,0 +1,6 @@
+{
+  "name": "HARIKOS AI Automation Studio",
+  "description": "Premium AI Automation Studio building custom AI Agents and Workflow Automation systems for modern businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --color-brand-gray-50: #f9f9f9;
+  --color-brand-gray-100: #ededed;
+  --color-brand-gray-200: #e5e5e5;
+  --color-brand-gray-300: #d4d4d4;
+  --color-brand-gray-400: #a3a3a3;
+  --color-brand-gray-500: #737373;
+  --color-brand-gray-600: #525252;
+  --color-brand-gray-700: #404040;
+  --color-brand-gray-800: #262626;
+  --color-brand-gray-900: #171717;
+  --color-brand-gray-950: #0a0a0a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-black);
+    color: var(--color-brand-gray-100);
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar to match premium minimal theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+  }
+}
+
+/* Touch & Mobile Scrolling Enhancements */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
+  scroll-behavior: smooth;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom background grid and glow patterns */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+/* Ambient glow animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 12s infinite ease-in-out;
+}
+
+
+/* Markdown styling */
+.markdown-body {
+  word-break: break-word;
+}
+.markdown-body p {
+  margin-bottom: 0.75em;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body strong {
+  font-weight: 600;
+  color: var(--color-brand-white);
+}
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 0.75em;
+}
+.markdown-body li {
+  margin-bottom: 0.25em;
+}
+.markdown-body a {
+  color: var(--color-brand-white);
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-gray-600);
+}
